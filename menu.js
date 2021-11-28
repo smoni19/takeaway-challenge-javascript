@@ -8,13 +8,14 @@ class Menu {
       'Char siu pork': 3,
       'Beef chow mein': 3.5,
       'Spare ribs': 3.5};
-      this.list = [];
+    this.list = [];
   }
 
   show_menu() {
-    for (var key in this.items) {
-      this.list += `${key} : £${this.items[key]}\n`;
-    }
+    Object.entries(this.items).forEach(([item, price]) => {
+    this.list += (`${item} : £${price}\n`);
+  });
+
     return this.list;
   }
 }
