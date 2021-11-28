@@ -17,4 +17,12 @@ describe('Order class', () => {
       expect(order.show_order_summary()).toEqual("2x Egg fried rice ordered (£4)\nTotal: £4");
     });
   });
+  
+  describe('calculate_total()', () => {
+    it('should add prices to total', () => {
+      const order = new Order();
+      order.add_item('Egg fried rice', 2);
+      expect(order.total).toBe(4)
+    });
+  });
 });

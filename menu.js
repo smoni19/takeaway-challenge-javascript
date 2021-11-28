@@ -17,7 +17,6 @@ class Menu {
     }
     return this.list;
   }
-
 }
 
 module.exports = Menu;

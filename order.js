@@ -9,14 +9,13 @@ class Order {
   }
 
   add_item(item, amount = 1) {
-    this.total += this.menu.items[item] * amount;
+    this.calculate_total(item, amount);
     this.order.push(`${amount}x ${item} ordered (£${this.menu.items[item] * amount})`);
   }
 
-  show_order_summary()
-  {
-    return this.order_summary = `${this.order.toString()}\nTotal: £${this.total}`;
-  }
+  calculate_total(item, amount) {this.total += this.menu.items[item] * amount;}
+
+  show_order_summary() {return this.order_summary = `${this.order.toString()}\nTotal: £${this.total}`;}
 }
 
 module.exports = Order;
